@@ -1,0 +1,397 @@
+$(document).ready(function(){
+	$('input#root_activeUser_application_applicant_email').bind('copy paste',function(e) {
+		e.preventDefault();
+	})
+	
+	$('input#root_activeUser_application_applicant_confirmEmail').bind('copy paste',function(e) {
+		e.preventDefault();
+	})
+	
+	
+	hideDeliveryAddress();
+	hideStateDelCountryUK();
+	
+
+	$(document.body).append('<div id="overlay"></div><div id="sessionTimeoutWarningShadow"></div>');
+	appendLocaledText();
+
+	$(document.body).append('<div id="languageChangeOverlay"></div><div id="languageChangeWarningShadow"></div>');
+	appendLocaledLanguageChangeText();
+	
+	var sessionTimeoutAlertRequired = ($("div [id='id_lo90_03_pageTitle']").length < 1  && $("div [id='id_lo90_01_pageTitle']").length < 1) ? true : false;
+	if(sessionTimeoutAlertRequired){
+		window.setTimeout(alertUserOfImpendingTimeout, 60*1000*19.5);
+		window.setTimeout(Redirect, 60*1000*20);
+	}
+
+	convertMainPageBulletsOrangeIEHack();
+	changeStarColour();
+	bindDefaultFormSubmitButton();
+	
+	$("ul#topNavLinks > li#change-language > a").click(function(){
+		alertUserOfChangingLanguage();
+		return false;
+	});
+});
+
+function convertMainPageBulletsOrangeIEHack()
+{
+	if($.browser.msie)
+	{
+		$("div#id_gs10_01_gs10_01_WelcomeImagePanel_help ul li").each(function(i) {
+			if(i == 3)
+			{
+				$(this).css("color", "#FF5B00");
+			}	
+		});		
+	}	
+}
+function Redirect()
+{
+	
+	window.location="\lo90_03.start?pageTitle="+$("input[name=ezgov_private_hiddenData_pageNameText]").val();
+}
+function appendLocaledText()
+{	
+	if($("ul#topNavLinks > li#change-language > a:eq(0)").text() == "English")
+	{
+		$(document.body).append('<div id="sessionTimeoutWarning"><div id="timeoutWarningWrapper"><div id="TopBar"><div class="holder"><span class="tl"></span><span class="tr"><span></span></span> <img src="images/logo_slim.png" alt="GOV.UK logo" /></div></div><div id="sessionTimeoutContent"><h2>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutHeading_CY]").val()+'</h2><p>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutText1_CY]").val()+'</p><p>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutText2_CY]").val()+'</p></div><div class="buttons"><div id="sessionWarningCancelButton" class="function"><span class="tl"></span><span class="tr"><span></span></span><a href="#">Canslo</a><span class="bl"></span><span class="br"></span></div><div class="function left"><span class="tl"></span><span class="tr"><span></span></span><input id="continueAction" class="button" type="submit" value="Parhau" style="background:#006435;color:#fff;"/><span class="bl"></span><span class="br"></span></div></div></div></div>');
+	}
+	else
+	{
+		$(document.body).append('<div id="sessionTimeoutWarning"><div id="timeoutWarningWrapper"><div id="TopBar"><div class="holder"><span class="tl"></span><span class="tr"><span></span></span> <img src="images/logo_slim.png" alt="GOV.UK logo" /></div></div><div id="sessionTimeoutContent"><h2>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutHeading_EN]").val()+'</h2><p>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutText1_EN]").val()+'</p><p>'+$("input[name=ezgov_private_hiddenData_sessionTimeoutText2_EN]").val()+'</p></div><div class="buttons"><div id="sessionWarningCancelButton" class="function"><span class="tl"></span><span class="tr"><span></span></span><a href="#">Cancel</a><span class="bl"></span><span class="br"></span></div><div class="function left"><span class="tl"></span><span class="tr"><span></span></span><input id="continueAction" class="button" type="submit" value="Continue" style="background:#006435;color:#fff;"/><span class="bl"></span><span class="br"></span></div></div></div></div>');
+	}
+}
+
+function alertUserOfImpendingTimeout()
+{
+	var o = document.getElementById('overlay');
+	var s = document.getElementById('sessionTimeoutWarning');
+	var ss = document.getElementById('sessionTimeoutWarningShadow');
+	
+	$('form').append('<input id="hiddenSubmitParam" class="hidden" type="submit" name="RoofAction_action=redisplay#save=true#validate=false" value="Continue"/>');
+	calculateSessionTimeoutWarningPosition();
+	$(window).resize(calculateSessionTimeoutWarningPosition);
+	$('#sessionWarningCancelButton').click(function(){
+		o.style.top = '-9999px';
+		s.style.top = '-9999px';
+		ss.style.top = '-9999px';
+		$('#hiddenSubmitParam').remove();
+	});
+	$('#continueAction').click(function(){
+		$('#hiddenSubmitParam').click();
+	});
+
+	o.style.top = '0';
+}
+
+var calculateSessionTimeoutWarningPosition = function()
+{
+	//handle overlay first
+	var docH = $(document).height();
+	var overlay = $('#overlay');
+	overlay.css('height', docH);
+	
+	//Then message box
+	var de = document.documentElement;
+	var w = self.innerWidth || (de && de.clientWidth) || document.body.clientWidth;
+	var h = self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
+	
+	var divWidth = 400;
+	var divHeight = 235;
+	$('#sessionTimeoutWarning').css({
+		width: divWidth+"px",
+		//height: divHeight+"px",
+		left: ((w - divWidth)/2)+"px",
+		top: (((h - divHeight)/2)-5)+"px"
+	});
+	
+	$('#sessionTimeoutWarningShadow').css({
+		width: divWidth+"px",
+		//height: divHeight+"px",
+		left: (((w - divWidth)/2)+4)+"px",
+		top: (((h - divHeight)/2)-1)+"px"
+	});
+}
+
+function changeStarColour()
+{
+	$("div.formtext.first p").each(function()
+	{					
+		var originalText = $(this).html();
+		if(originalText.indexOf('*') != -1)
+		{
+			var textBeforeAestrike = originalText.substring(0, originalText.indexOf('*'));
+			var textAfterAestrike = originalText.substring(originalText.indexOf('*')+1,originalText.length);
+			var stuffedText = "<span style=\"color:#FFFFFF;font-size:17px; font-weight:bolder; vertical-align:middle;\"><img alt=\"Enter\" src=\"images/icon_required.gif\" /></span>";
+			$(this).html("");
+			$(this).html(textBeforeAestrike+stuffedText+textAfterAestrike);
+		}
+	});
+}
+
+function bindDefaultFormSubmitButton()
+{
+	$("input").bind("keydown", function(event) {
+		//track enter key
+		var keyCode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
+		if(keyCode == 13) { // keyCode for enter key
+			var target = event.target || event.srcElement;
+			if (target.type == 'submit')
+			{
+				target.click();
+			}
+			else if(document.getElementById("nextAction")) {
+				document.getElementById("nextAction").click();
+			}
+			else if (document.getElementById("nextActionErrorMode")) {
+				document.getElementById("nextActionErrorMode").click();
+			}
+			else if (document.getElementById("loginAction")) {
+				document.getElementById("loginAction").click();
+			}
+			else if (document.getElementById("exitFinishAction")) {
+				document.getElementById("exitFinishAction").click();
+			}
+			else if (document.getElementById("startNewApplicationAction")) {
+				document.getElementById("startNewApplicationAction").click();
+			}
+			else if (document.getElementById("cancelAction")) {
+				document.getElementById("cancelAction").click();
+			}
+			return false;
+		}
+		else {
+			return true;
+		}
+	}); // end of binding.
+}
+
+function wopen(url, name, w, h)
+{
+	  // Fudge factors for window decoration space.
+	  // In my tests these work well on all platforms & browsers.
+	  w += 32;
+	  h += 96;
+	  wleft = (screen.width - w) / 2;
+	  wtop = (screen.height - h) / 2;
+	  // IE5 and other old browsers might allow a window that is
+	  // partially offscreen or wider than the screen. Fix that.
+	  // (Newer browsers fix this for us, but let's be thorough.)
+	  if (wleft < 0) {
+	    w = screen.width;
+	    wleft = 0;
+	  }
+	  if (wtop < 0) {
+	    h = screen.height;
+	    wtop = 0;
+	  }
+	 window.open(url,'Help','width=' + w + ', height=' + h +'left=' + wleft + ', top=' + wtop + ', ' +
+			    'location=no, menubar=no, ' +
+	    'status=no, toolbar=no, scrollbars=yes, resizable=no');
+	 
+}
+
+function hideDeliveryAddress()
+{
+	//This ID is the ID of the delivery address fieldset. Its grandparent is the div we want to show or hide.
+	var deliveryAddress = $('#id_pd20_02_contactDets_deliveryAddress_alternateDeliveryAddress');
+
+	//Has nothing been entered into any of the delivery address fields?
+	var checkOuter = ($('#root_activeUser_application_applicant_application_deliveryAddress_postcode').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_postcode').val() == "") 
+				&& ($('#root_activeUser_application_applicant_application_deliveryAddress_house').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_house').val() == "") 
+				&& ($('#root_activeUser_application_applicant_application_deliveryAddress_street').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_street').val() == "") 
+				&& ($('#root_activeUser_application_applicant_application_deliveryAddress_town').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_town').val() == "")
+				&& ($('#root_activeUser_application_applicant_application_deliveryAddress_county').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_county').val() == "")
+				&& ($('#root_activeUser_application_applicant_application_deliveryAddress_country').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_country').val() == "");
+
+	
+	if(checkOuter)
+	{	
+		if(!$('#root_activeUser_application_applicant_application_deliveryAddressSpecified_true').is(":checked"))
+		{
+			deliveryAddress.parent().parent().toggleClass('hide');
+		}
+	}	
+	else
+	{
+		if($('#root_activeUser_application_applicant_application_deliveryAddressSpecified_true').is(":checked"))
+		{
+			var deliveryAddressCntry = $('#root_activeUser_application_applicant_application_deliveryAddress_country');
+			var county = $('#root_activeUser_application_applicant_application_deliveryAddress_county');
+			var alternateButton =  document.getElementById('findAlternateAddressAction');
+			if(deliveryAddressCntry.val() == "UK" || deliveryAddressCntry.val() == "UK2")
+			{
+				county.val('');
+				county.parent().parent().toggle();
+				alternateButton.style.display = 'block';
+			}
+			else
+			{
+				alternateButton.style.display = 'none';
+			}
+		}
+	}
+	
+	$('#root_activeUser_application_applicant_application_deliveryAddressSpecified_true').click(function() {
+		var check = ($('#root_activeUser_application_applicant_application_deliveryAddress_postcode').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_postcode').val() == "") 
+			&& ($('#root_activeUser_application_applicant_application_deliveryAddress_house').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_house').val() == "") 
+			&& ($('#root_activeUser_application_applicant_application_deliveryAddress_street').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_street').val() == "") 
+			&& ($('#root_activeUser_application_applicant_application_deliveryAddress_town').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_town').val() == "")
+			&& ($('#root_activeUser_application_applicant_application_deliveryAddress_county').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_county').val() == "")
+			&& ($('#root_activeUser_application_applicant_application_deliveryAddress_country').val() == undefined || $('#root_activeUser_application_applicant_application_deliveryAddress_country').val() == "");
+			
+		if(check)
+		{
+			check =  (!$('#root_activeUser_application_applicant_application_deliveryAddressSpecified_true').is(":checked"))
+			var county = $('#root_activeUser_application_applicant_application_deliveryAddress_county');
+			var alternateButton =  document.getElementById('findAlternateAddressAction');
+			if(check)
+			{
+				deliveryAddress.parent().parent().toggleClass('hide');
+				if(county.parent().parent().css('display') != 'none')
+				{
+					county.parent().parent().toggle();
+				}
+				county.parent().parent().toggle(true);
+				alternateButton.style.display = 'none';
+			}
+			else
+			{
+				deliveryAddress.parent().parent().toggleClass('hide');
+				if(county.parent().parent().css('display') != 'none')
+				{
+					county.parent().parent().toggle();
+					alternateButton.style.display = 'block';
+				}
+			}
+		}
+		else
+		{	
+			check =  (!$('#root_activeUser_application_applicant_application_deliveryAddressSpecified_true').is(":checked"))
+			if(check)
+			{
+				var postcode = $('#root_activeUser_application_applicant_application_deliveryAddress_postcode');
+				var house = $('#root_activeUser_application_applicant_application_deliveryAddress_house');
+				var street = $('#root_activeUser_application_applicant_application_deliveryAddress_street');
+				var town = $('#root_activeUser_application_applicant_application_deliveryAddress_town');
+				var county = $('#root_activeUser_application_applicant_application_deliveryAddress_county');
+				var country = $('#root_activeUser_application_applicant_application_deliveryAddress_country');
+				var alternateButton =  document.getElementById('findAlternateAddressAction');
+
+				
+				postcode.val('');
+				house.val('');
+				street.val('');
+				town.val('');
+				county.val('');
+				country.val('');
+				deliveryAddress.parent().parent().toggleClass('hide');
+			}
+			else
+			{
+				deliveryAddress.parent().parent().toggleClass('hide');
+			}
+		}
+
+
+		//Bug in IE6: after hiding or showing the delivery address, the buttons disappear
+		//(actually they are rendered in the wrong place, thus obstructed and seemingly hidden)
+		//However, after setting the active stylesheet, or doing virtually anything,
+		//the buttons reappear in the correct position.
+		if($.browser.msie)
+		{
+			$("#id_pd20_02_2002_btns").css("display", "inline");
+			$("#id_pd20_02_2002_btns").toggleClass('show');
+		}
+
+		return true;
+	});
+}
+
+function hideStateDelCountryUK()
+{
+	$('#root_activeUser_application_applicant_application_deliveryAddress_country').change(function() {
+		var deliveryAddressCntry = $('#root_activeUser_application_applicant_application_deliveryAddress_country');
+		var county = $('#root_activeUser_application_applicant_application_deliveryAddress_county');
+		var alternateButton =  document.getElementById('findAlternateAddressAction');
+		if(deliveryAddressCntry.val() != "UK" && deliveryAddressCntry.val() != "UK2")
+		{
+			if(county.parent().parent().css('display') == 'none')
+			{
+				county.parent().parent().toggle();
+			}
+			alternateButton.style.display = 'none';
+		}
+		else
+		{
+			if(county.parent().parent().css('display') != 'none')
+			{
+				county.val('');
+				county.parent().parent().toggle();
+			}
+			alternateButton.style.display = 'block';
+		}
+		return true;
+	});
+}
+
+function appendLocaledLanguageChangeText()
+{
+	var hrefVal = $("ul#topNavLinks > li#change-language > a:eq(0)").attr("href");
+	if($("ul#topNavLinks > li#change-language > a:eq(0)").text() == "English")
+	{
+		$(document.body).append('<div id="languageChangeWarning"><div id="languageChangeWarningWrapper"><div id="TopBar"><div class="holder"><span class="tl"></span><span class="tr"><span></span></span> <img src="images/logo_slim.png" alt="GOV.UK logo" /></div></div><div id="languageChangeContent"><h2>'+$("input[name=ezgov_private_hiddenData_languageChangeHeading_CY]").val()+'</h2><p>'+$("input[name=ezgov_private_hiddenData_languageChangeText1_CY]").val()+'</p><p>'+$("input[name=ezgov_private_hiddenData_languageChangeText2_CY]").val()+'</p></div><div class="buttons"><div id="languageChangeWarningCancelButton" class="function"><span class="tl"></span><span class="tr"><span></span></span><a href="#">Canslo</a><span class="bl"></span><span class="br"></span></div><div class="function left"><span class="tl"></span><span class="tr"><span></span></span><a id="languageChangeContinueAction" class="button" href="' + hrefVal + '" style="background:#006435;color:#fff;">Parhau</a><span class="bl"></span><span class="br"></span></div></div></div></div>');
+	}
+	else
+	{
+		$(document.body).append('<div id="languageChangeWarning"><div id="languageChangeWarningWrapper"><div id="TopBar"><div class="holder"><span class="tl"></span><span class="tr"><span></span></span> <img src="images/logo_slim.png" alt="GOV.UK logo" /></div></div><div id="languageChangeContent"><h2>'+$("input[name=ezgov_private_hiddenData_languageChangeHeading_EN]").val()+'</h2><p>'+$("input[name=ezgov_private_hiddenData_languageChangeText1_EN]").val()+'</p><p>'+$("input[name=ezgov_private_hiddenData_languageChangeText2_EN]").val()+'</p></div><div class="buttons"><div id="languageChangeWarningCancelButton" class="function"><span class="tl"></span><span class="tr"><span></span></span><a href="#">Cancel</a><span class="bl"></span><span class="br"></span></div><div class="function left"><span class="tl"></span><span class="tr"><span></span></span><a id="languageChangeContinueAction" class="button" href="' + hrefVal + '" style="background:#006435;color:#fff;">Continue</a><span class="bl"></span><span class="br"></span></div></div></div></div>');
+	}
+}
+
+function alertUserOfChangingLanguage()
+{
+	var o = document.getElementById('languageChangeOverlay');
+	var s = document.getElementById('languageChangeWarning');
+	var ss = document.getElementById('languageChangeWarningShadow');
+	
+	calculateLanguageChangeWarningPosition();
+	$(window).resize(calculateLanguageChangeWarningPosition);
+	$('#languageChangeWarningCancelButton').click(function(){
+		o.style.top = '-9999px';
+		s.style.top = '-9999px';
+		ss.style.top = '-9999px';
+	});
+
+	o.style.top = '0';
+}
+
+var calculateLanguageChangeWarningPosition = function()
+{
+	//handle overlay first
+	var docH = $(document).height();
+	var overlay = $('#languageChangeOverlay');
+	overlay.css('height', docH);
+	
+	//Then message box
+	var de = document.documentElement;
+	var w = self.innerWidth || (de && de.clientWidth) || document.body.clientWidth;
+	var h = self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
+	
+	var divWidth = 400;
+	var divHeight = 235;
+	$('#languageChangeWarning').css({
+		width: divWidth+"px",
+		//height: divHeight+"px",
+		left: ((w - divWidth)/2)+"px",
+		top: (((h - divHeight)/2)-5)+"px"
+	});
+	
+	$('#languageChangeWarningShadow').css({
+		width: divWidth+"px",
+		//height: divHeight+"px",
+		left: (((w - divWidth)/2)+4)+"px",
+		top: (((h - divHeight)/2)-1)+"px"
+	});
+}
+

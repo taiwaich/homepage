@@ -1,0 +1,17 @@
+						function sitestat(u)
+						{
+						var d=document,l=d.location;
+						ns_pixelUrl=u+"&amp;ns__t="+(new Date().getTime());
+						var startIndex = u.indexOf('?');
+						var endIndex = u.indexOf('&');
+						var pageTitle = u.substring(startIndex+1,endIndex);
+						var var1=escape(l&&l.href?l.href:d.URL);
+						u=ns_pixelUrl+"&amp;ns_c="+((d.characterSet)?d.characterSet:d.defaultCharset)+"&amp;ns_ti="+escape(pageTitle)+"&amp;ns_jspageurl="+var1+"&amp;ns_referrer="+escape(d.referrer);
+						
+						var imgPart1=escape('&lt;img src=');
+						var imgSrc = escape('&quot;' + u + '&quot;');
+						var imgPart2=escape('height="1" width="1" alt="*"/>');
+						var imgWriter1=imgPart1.concat(imgSrc);
+						var imgWriter=imgWriter1.concat(imgPart2);
+						(d.images)?new Image().src=u:d.write(unescape(imgWriter));
+						};

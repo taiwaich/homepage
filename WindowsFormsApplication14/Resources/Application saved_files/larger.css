@@ -1,0 +1,15 @@
+/* v3.3 */
+@media screen,print {
+	body {font-size:80%;}
+	
+	/* EZGOV changes to fix issues with this with regards to some of the elements */
+	
+	/* Checkbox label should align to the centre of the check box updated from -15px border to -17px*/
+	form .formblock .chkbox label {
+		margin:-17px 0 0 20px;
+	}
+	/* The drop down selections were staying the same size when when resize function was used. */
+	select {
+		font-size:17px;
+	}
+}

@@ -1,0 +1,14 @@
+.progress { display:none;}
+#Content { display: inline;}
+form #Content .holder { display: inline;}
+.complex_form table thead th{
+	border:10px;
+	padding:10px;
+}
+.complex_form table tbody td{
+	border:10px;
+	padding:10px;
+}
+#downloadDeclarationActionImage img {
+	border: none;
+}

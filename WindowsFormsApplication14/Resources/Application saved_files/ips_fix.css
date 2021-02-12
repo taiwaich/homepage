@@ -1,0 +1,1384 @@
+    td.controlbuttons {
+        text-align: left !important;
+    }
+    td.controlbuttons a {
+    	display: block;
+        text-decoration: none;
+        color: #006435;
+        padding: 0 0 0 25px;
+        height: 25px !important;
+        clear: left;
+        margin: 0 !important;
+    }
+    td.controlbuttons a:hover,
+	#Content td.controlbuttons a:hover {
+        text-decoration: underline;
+        color: #006435;
+    }
+    td.controlbuttons a.edit {
+        background: url(../images/edit.gif) center left no-repeat;
+    }
+    td.controlbuttons a.withdraw {
+        background: url(../images/delete.gif) center left no-repeat;
+    }
+    td.controlbuttons a.select {
+        background: url(../images/select.gif) center left no-repeat;
+    }
+    td.controlbuttons a span {
+        padding: 5px 0 0 0;
+        display: block;
+    }
+    
+    .complex_form table tbody td {
+		font-weight:normal;
+		text-align:left;
+	}
+		
+	div.formtext ol,
+    div.formtext ul,
+    div.pagehelp ol,
+    div.pagehelp ul{
+        font-size: 1.2em !important;
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    div.formtext ol li,
+    div.formtext ul li,
+    div.pagehelp ol li,
+    div.pagehelp ul li {
+        padding-bottom: 5px;
+    }
+    
+    form .formblock fieldset legend span {			
+		width: auto;
+	}
+	
+	form .formblock .button
+	{
+		border-width:0px;
+	}
+	
+	form .formblock input .button {
+		border-width:0px;
+	}
+	
+	form .errorm .formblock
+	{
+		border-top: 0px;
+	}
+	
+	.formblock 
+	{
+		background-color: #FFFFFF;
+	}
+	
+	div.inlinebutton div.function {
+        float: left !important;
+        margin: 0 0 0 15px;
+    }
+    div.inlinebutton input {
+        float: left !important;
+    }
+	
+	th.totalheader {
+        font-weight: bold !important;
+        background-color: rgb(224, 224, 224) !important;
+        text-align: right !important;
+    }
+    
+    /* Not all paragraphs in an error box are error text e.g. help*/
+	.errorm p { color:#000000;}
+	/*  all text in the error list at the top of the page should be red */
+	#errorlist p {color:#ff0000;}
+	.warningm {
+		border:1px solid #0000FF;
+		margin-bottom:1.2em;
+		overflow:hidden;
+		padding:0.833em 10px;
+	}
+	.warningm li a, .formblock .warningm a {
+		background:url("../images/blueicon.gif") no-repeat scroll 0 0.333em transparent;
+		color:#0000FF;
+		font-size:1.2em;
+		font-weight:bold;
+		padding-left:10px;
+		text-decoration:none;
+	}
+	.warningm a:hover {
+		text-decoration: underline;
+		color: #0000FF;
+	}
+	.warningm p {color:#000000;}
+	/* all warnings at the top of the page should be in orange */
+	#warnlist p {color:#0000FF;}
+	/** paragraphs with a class of error are error text and should be styled accordingly*/
+	.formcon .errorm .error {padding:0.166em 0 0 25px;margin-bottom:0.666em;background:left top url('../images/erroricon.gif') no-repeat;min-height:20px;color:#ff0000;}
+	.formcon .warningm .warning {
+		background:transparent url(../images/warningicon.gif) no-repeat scroll left top;
+		padding-left: 25px;
+		color:#0000FF;
+	}
+	/* total cost */
+	.totalcostm p {color:#FF5B00;}
+	.formcon .totalcostm .totalcost {
+		background:transparent url(../images/recalculate_icon.gif) no-repeat scroll left top;
+		padding-left: 25px;
+		color:#FF5B00;
+	}
+	
+	.leftcol {
+ 		float: left;
+ 		margin: 2em 10px 0 0;
+	}
+
+	.rightcol {
+ 		margin: 0 0 0 0;
+	}
+
+    .submitc {clear: both;}
+    
+    .submitPlain {clear: both;}
+    
+    .plain {background:#d83e0c}
+	.plain a, .plain button, .plain input {background:#ff5c01;}
+	
+    form .formblock .leftcol a {background: white}
+	form .formblock .leftcol a:visted {background: white}
+
+    form .formblock .submitPlain a {color:white;background: #ff5c01}
+	form .formblock .submitPlain a:visted { color:white;background: #ff5c01}
+	
+	td[headers].money {text-align:right;}
+	.complex_form table tbody td .money {text-align:right;}
+	.complex_form table tfoot td {
+		padding: 5px;
+	}
+	
+	.holder .welcomeOlc .paymentMethodWrapper {
+	margin: 0 0 20px 20px;
+	}
+	
+	.progress 
+	{
+		float: left;
+		margin: 0px 0px 0px 10px;
+		border: 0px;
+		font-size:1.1em;
+		padding: 0 0 10px 0;
+	}
+	
+	.progress dd 
+	{
+		text-align: center;
+		border: 0px;
+		padding: 0px;
+		margin: 0px;
+		width: 91px;
+	}
+	.progress dt
+	{
+		font-weight: bold;
+		text-align: center;
+		border: 0px;
+		padding: 0px;
+		margin: 0px;  
+	}
+	
+	dl .icon {
+		height: 40px;
+	}
+
+	dl .description {
+		height:2.5em;
+		color:#7F3F98;
+	}
+	
+	dl .step {
+		display: none;
+	}
+	
+	dl .descriptionf {
+		height:2.5em;
+		color:#888;
+	}
+	
+	dl .stepf {
+		display: none;
+	}
+	
+	.indicator
+	{
+		background: url(../images/chevrons.gif) no-repeat -400px 0px;
+		height: 20px;
+		clear:both;
+		margin:10px 0 10px 10px;
+	}
+	
+	.indmask
+	{
+		height: 20px;
+		clear:both;
+	}
+	
+	.completion 
+	{
+		float: right;
+		font-size: 1.2em;
+		margin: 0.2em 0.4em 0 0;
+	}
+
+	form #Content .holder {
+		overflow: auto;
+	}
+
+	/* ADJUSTMENTS FOR FORM WHITESPACE */
+	#Content .formblock .formtext
+	{
+	  margin-bottom: 0em;
+	  padding: 0 5px;
+	}
+
+	/* START - STYLE FOR DUMMY IMAGE PANELS - TO BE REMOVED */
+	
+	.welcomeOlc
+	{		 
+		 float: left;
+		 clear: both;
+	}
+	
+	.welcomeCpp
+	{		 
+		 float: left;
+		 clear:both;
+	}
+	
+	#welcomeImage {
+		padding-bottom: 10px;
+		width:548px;
+	}
+
+	#ignore
+	{
+		background:#006435;
+		color:#ffffff;
+	}	
+	/* END - STYLE FOR DUMMY IMAGE PANELS - TO BE REMOVED */
+	
+	/* START - SESSION TIMEOUT WARNING */
+	#sessionTimeoutWarning {
+		position: fixed;
+		background-color: #fff;
+		border: #888 1px solid;
+		z-index: 200;
+		top: -9999px;
+	}
+	
+	#sessionTimeoutWarningShadow {
+		position: fixed;
+		z-index: 190;
+		background-color: #000;
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		top: -9999px;
+	}
+	
+	#sessionTimeoutWarning #sessionTimeoutContent {
+		padding-top: 15px;
+		margin: 0 5px 5px 5px;
+		border-top: 10px solid #2B8CC4;
+		border-bottom: #ccc 1px solid;
+	}
+	
+	#sessionTimeoutWarning h2{
+		margin: 5px 0 5px 0;
+		font-size: 1.5em;
+	}
+	
+	#sessionTimeoutWarning .buttons {
+		height: 4em;
+		margin: 10px 5px 10px 5px;
+		border-bottom: #ccc 1px solid;
+	}
+	
+	#sessionTimeoutWarning .next {
+		float: right;
+		margin: 0;
+	}
+	
+	#sessionWarningCancelButton a {
+/*		padding:0.25em 0.25em 0.25em 12px;		*/
+		color: #000;
+	}
+	
+	#sessionTimeoutWarning #TopBar .holder{
+		padding: 0;
+		margin: 0 5px 0 5px;
+	}
+	
+	#overlay {
+		background-color: #000;
+		position: absolute;
+		margin: auto;
+		top: -9999px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		filter: alpha(opacity=25);
+		opacity: 0.25;
+		z-index: 50;
+	}
+
+	.hidden {
+		display: none;
+	}
+	
+	/* IE-6 fixes */
+	* html #sessionTimeoutWarning {
+		position: absolute;
+	}
+	
+	* html #sessionTimeoutWarningShadow {
+		position: absolute;
+	}
+	/* END - SESSION TIMEOUT WARNING */
+	
+	/* START - PASSPORT ADVICELINE - NOT COVERED BY EXISTING TOOLKIT */
+	#passportAdvice {
+		padding-bottom: 0;
+	}
+	
+	#passportAdvice li {
+		display: block;
+		height: 200%;
+		margin: 5px 0 20px 5%;
+		padding-left: 15%;
+	}
+	
+	#passportAdvice span {
+		font-size:1.2em;
+		line-height: 1.2em;
+	}
+	
+	#passportAdvice #telephoneAdvice {
+		background:transparent url(../images/phone.gif) no-repeat scroll left;
+	}
+	
+	#passportAdvice #textphoneAdvice {
+		background:transparent url(../images/textphone.gif) no-repeat scroll left;
+	}
+	
+	#passportAdvice #typetalkAdvice {
+		background:transparent url(../images/typetalk.gif) no-repeat scroll left;
+	}
+	
+	#passportAdvice #contactAdvice {
+		background:transparent url(../images/contact.gif) no-repeat scroll left;
+	}
+	
+	#passportAdviceLinesOpen {
+		font-size:1.2em;
+		line-height: 1.2em;
+	}
+	/* END - PASSPORT ADVICELINE - NOT COVERED BY EXISTING TOOLKIT */
+	#nextAction {background:#006435;color:#FFFFFF;}
+	#exitFinishAction {background:#006435;color:#FFFFFF;}
+	#submitAction {background:#006435;color:#FFFFFF;}
+	#createAction {background:#006435;color:#FFFFFF;}
+	#deleteAction {background:#006435;color:#FFFFFF;}
+	#exitAction {background:#006435;color:#FFFFFF;}
+	#nextActionErrorMode {background:#006435;color:#FFFFFF;}
+	#printAction {background:#006435 right center url(../images/printicon.gif) no-repeat;;color:#FFFFFF;padding-right:22px;}
+	#print {background:#006435;;color:#FFFFFF;}	
+	#printRA{background:#006435 right center url(../images/printicon.gif) no-repeat;;color:#FFFFFF;padding-right:22px;}
+	/* exit button color */	#exitAction {background:#006435;color:#FFFFFF;}	
+	
+	/* Error class fix for the expiry date field in payment page */
+	.error {
+		-moz-background-clip:border;
+		-moz-background-inline-policy:continuous;
+		-moz-background-origin:padding;
+		background:transparent url(../images/erroricon.gif) no-repeat scroll left top;
+		color:#FF0000;
+		margin-bottom:0.666em;
+		min-height:20px;
+		padding:0.166em 0 0 25px;
+	}
+	
+	/* error link fix for global page errors */
+	.hideLinkDetails {
+		text-decoration: none;
+		cursor: text;
+	}
+
+	/* right alignment for the exit button on save and exit page */
+	.rightAlign {
+		float: right;
+	}
+	
+	/* Table truncation solution */
+	.scl_complex {
+		overflow: auto;
+	}
+	
+	/* aestrikes aligment */
+	img {
+		vertical-align: top;
+	}
+	
+	/* removing white space above apply for a passport and below the orange banner */
+	#Section {
+		border-top:1px solid #E0E0E0;
+		margin:0;
+		overflow:hidden;
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+
+	/* fixes the alignment of the total to pay (co40_04) */
+	form .formblock.contact .totalToPay .odd span {
+		font-size: 1.2em;line-height: 1.5em;margin-right:10px;
+	}
+	form .formblock.contact .totalToPay .even span {
+		font-size: 1.2em;line-height: 1.5em;font-weight: bold;
+	}
+
+	/* Style for the payment method banner (co40_04) */
+	.paymentMethodWrapper {
+		margin:0 0 20px 20px;
+		float:left;
+	}
+	
+	/* Style for the payment method banner (co40_04) */
+	.paymentMethodWrapper div {
+		padding:5px;
+		display:inline;
+	}
+	
+	/* applist table */
+	thead th {
+		text-align:left;
+	}
+	
+	/* payment table */
+	#cost {
+		text-align:right;
+	}
+	
+	/* Style for removing border from ips RHN logo */
+	.removeBorder {
+		border-bottom: none;		
+	}
+	
+		
+	/* home page fix */
+	div#id_gs10_01_gs10_01_WelcomeImagePanel_help p  {
+			
+			font-weight: bolder;
+			margin-bottom: 0;
+			
+	}
+	
+	div#id_gs10_01_gs10_01_WelcomeImagePanel_help li:nth-child(4) {
+			color: #FF5B00;
+	}
+	
+	/* top thin border line removal from start a new application button OLC CPP mode*/	
+	div#id_gs10_02_gs10_02_WelcomeImagePanel_help {		
+		margin-top: 20px;		
+		border-top: none;		
+	}
+	
+	div#id_gs10_02_gs10_02_WelcomeImagePanel_help  p {		
+		
+		font-weight: bolder;
+						
+	}
+		
+	/* pd20.10 text area alignment fix with label*/
+	#id_pd20_10_applicantAdditionalSet_applicantAdditional_ExtraInfo label span{
+		display: block;
+		float: none;
+		margin-bottom: 0.333em;
+		font-size:1.3em;
+	}
+	
+	/* fixes the overlapping of fields in the login form 
+	form .formblock.contact .loginForm .odd {float:left;width:32%;text-align:left;margin:0;}
+	form .formblock.contact .loginForm .even {float:right;text-align:left;margin:0;}
+	*/
+	
+	/* styles for the aligned date field */
+	form .formblock .alignedMonthYear .odd {float:left;width:30%;text-align:right;margin:0;}
+	form .formblock .alignedMonthYear .odd .label {margin:0.333em 10px 0 0;float:right;width:auto;font-size:1.2em;}
+	form .formblock .alignedMonthYear .even {text-align:left;margin:0;}
+	form .formblock .alignedMonthYear .even label span {margin:0.333em 10px 0 0;}
+	form .formcon .alignedDate {border-style:none;margin-bottom:0px;} 
+
+	/* styles for the update cost message */
+	.totalcostm {padding:0.833em 10px 0.833em 10px;border:1px #ff5b00 solid;margin-bottom:1.2em;overflow:hidden;}
+	.totalcostm p {padding:0.166em 0 0 25px;margin-bottom:0.666em;background:left top url(../images/recalculate_icon.gif) no-repeat;min-height:20px;color:#ff5b00;}
+	.formcon .totalcostm p {background:none;padding-left:0;}
+	
+	.failurecostm {padding:0.833em 10px 0.833em 10px;border:1px #FF0000 solid;margin-bottom:1.2em;overflow:hidden;}
+	.failurecostm p {padding:0.166em 0 0 25px;margin-bottom:0.666em;background:left top url(../images/erroricon.gif) no-repeat;min-height:20px;color:#FF0000;}
+	.formcon .failurecostm p {background:none;padding-left:0;}
+	
+	/* h4 headings on the checklist page styled not grey and not indented */
+	.formwrap h4
+	{
+		background-color: #ffffff;
+		padding-left:0px;
+	}
+	
+	/* Fix for OLC-388 */
+	form .formblock div a.newwindow {
+		font-size: 1em;
+	}
+	
+	form .formtext p a {
+		background:transparent url(../images/greyicon.gif) no-repeat scroll left 0.3em;
+		color:#2E358b;
+		font-size: 1em;
+		padding-left:9px;
+		text-decoration:underline;
+		width:auto;
+	}
+	
+	/*text area fix*/
+	#extraSupportingInformation_div_odd {
+		float:	none;
+		text-align:left;
+		width:100%;
+	}
+	
+	/* cancel button */
+	#cancelAction {
+		background: #DEE0E2;
+		color:#191A1A;
+	}
+	
+	/* close button */
+	#closeRA {
+		background: #FF5C01 url(../images/clearicon.gif) no-repeat scroll right center;
+		padding-right: 22px;
+	}
+		
+	/* edit button */
+	.editButton {		
+		display: block;
+		font-size: 1.0em;
+	}
+	
+	.editButton span {
+		color: #FF5C01;
+	}
+	
+	a.editButton  {
+		text-decoration: none;
+	}
+	
+	a.editButton:hover {
+		text-decoration: underline; color: #FF5C01;
+	}
+	
+	input.editButton {
+		color: #006435;
+		border: none;
+		padding: 0px 0px 0px 20px;
+		background: transparent url(../images/edit.gif)  no-repeat scroll left center;
+		height: 1.9em;
+		cursor:pointer;
+		text-decoration:none;
+	}
+
+	input.editButton:hover {
+		text-decoration: underline; color: #006435;
+	}
+
+	/* delete button */
+	.deleteButton {		
+		display: block;
+		font-size: 1.0em;
+	}
+	
+	.deleteButton span {
+		color: #FF5C01;
+	}
+	
+	a.deleteButton  {
+		text-decoration: none;
+	}
+	
+	a.deleteButton:hover {
+		text-decoration: underline; color: #FF5C01;
+	}
+	
+	input.deleteButton {
+		color: #006435;
+		border: none;
+		padding: 0px 0px 0px 20px;
+		background: transparent url(../images/delete.gif)  no-repeat scroll left center;
+		height: 1.9em;
+		cursor:pointer;
+		text-decoration:none;
+	}
+
+	input.deleteButton:hover {
+		text-decoration: underline; color: #006435;
+	}
+
+	/* pdf button */
+	.pdfButton {		
+		display: block;
+		font-size: 1.0em;
+		border-left:1px solid #ccc;
+	}
+	
+	.pdfButton span {
+		color: #FF5C01;
+	}
+		
+	a.pdfButton {
+		color: #006435;
+		border: none;
+		padding: 0px 0px 0px 20px;
+		background: transparent url(../images/printdeclaration.gif)  no-repeat scroll left center;
+		/*height: 1.9em;*/
+		cursor:pointer;
+		text-decoration: none;
+	}	
+	
+	a.pdfButton:hover {
+		text-decoration: underline; color: #006435 !important;
+	}
+	
+	#checkStatusDownloadImage a:hover {
+		color: #006435 !important;
+	}
+
+	a.pdfButton:active {
+		text-decoration: underline; color: #006435;
+	}
+
+	a.pdfButton:focus {
+		text-decoration: underline; color: #006435 !important;
+	}
+	
+	
+	/* fix error button */
+	.fixErrorButton {		
+		display:inline;
+		font-size:1.0em;
+	}
+	
+	.fixErrorButton span {
+		color: #006435;
+	}
+	
+	a.fixErrorButton  {
+		text-decoration: none;
+	}
+	
+	a.fixErrorButton span:hover {
+		text-decoration: underline; color: #006435;
+	}
+	
+	/*editImage*/
+	.editImage {
+		display: inline;
+		width: 15px;
+	}
+	
+	/*delete Image*/
+	.deleteImage {
+		display: inline;
+		width: 15px;
+	}
+	
+	/*fixError Image*/
+	.fixErrorImage {
+		display: inline;
+		width: 15px;
+	}
+	
+	/*return to application button*/
+	#returnToApplication {
+		background: #DEE0E2;
+		color: #191A1A;
+	}
+	
+	
+	/* login button */
+	#loginAction{
+		width: auto;
+		padding: 0.166em 2em 0.25em 1em;
+		border: 0 none;
+	}
+	
+	td#grandTotalValue  {
+		border-left: #CCCCCC 1px solid; 
+	}
+	
+	td#reCalcButtontd {
+		border-left: #CCCCCC 1px solid;
+		padding-left:10px;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_postcode {
+		width: 70px;
+	}
+	
+	#root_activeUser_application_applicant_application_deliveryAddress_postcode {
+		width: 70px;
+	}
+
+	#findAddressAction {
+		width: auto;
+	}
+	
+	#findAlternateAddressAction {
+		width: auto;
+	}
+
+	#root_activeUser_application_uncancelled_0__number {
+		width: 85px;
+	}
+
+	#root_activeUser_application_uncancelled_1__number {
+		width: 85px;
+	}
+
+	#root_activeUser_application_uncancelled_2__number {
+		width: 85px;
+	}
+
+	#root_activeUser_application_ukIdentityCardNumber {
+		width: 85px;
+	}
+
+	#root_activeUser_application_applicant_certificateOfRegistrationNumber {
+		width: 82px;
+	}
+	
+	#root_activeUser_application_applicant_mother_passport_number{
+		width: 85px;
+	}
+
+	#root_activeUser_application_applicant_father_passport_number {
+		width: 85px;
+	}
+
+	div.even input#root_userId {
+		width: 200px;
+	}
+
+	#root_password {
+		width: 200px;
+	}
+
+	.helpWrapper{
+		margin-right: 3px;
+		padding-top: 4.9em;
+		position: relative;
+	}
+	
+	/* START: fixes Firefox 2 issues */	
+	/* login form alignment */	
+	#id_gs10_01_loginSection {
+		background:none;
+		padding-left:560px;
+	}
+	
+	
+	/* START: fixes Firefox 2 issues */	
+	/* login form alignment */	
+	#id_gs10_01_loginSection_gs10_01_newAppSection_newInstructions {
+		border-top: 0px;
+		margin-bottom: 0px;	
+	}
+
+	
+	/* START: fixes Firefox 2 issues */	
+	/* login form alignment */	
+	#id_gs10_01_loginSection_gs10_01_loginExistingSection_logIntoAppInstructions {
+		border-top: 0px;
+		margin-top:45px;
+		margin-bottom: 0px;	
+
+	}
+	
+	#id_gs10_02_loginSection {
+		background:none;
+		padding-left:560px;
+	}
+
+	/* START: fixes Firefox 2 issues */	
+	/* login form alignment */	
+	#id_gs10_02_loginSection_gs10_02_newAppSection_newInstructions {
+		border-top: 0px;
+		margin-bottom: 0px;	
+	}
+
+	
+	/* START: fixes Firefox 2 issues */	
+	/* login form alignment */	
+	#id_gs10_02_loginSection_gs10_02_loginExistingSection_logIntoAppInstructions {
+		border-top: 0px;
+		margin-top:45px;
+		margin-bottom: 0px;	
+
+	}
+
+
+	#id_gs10_01_loginSection_loginForm{
+		width:240px;
+	}
+	
+	#userId_div_odd {
+		padding-left:1px;
+		margin-right: -1px;
+	}
+	
+	#password_div_odd {
+		padding-left:1px;
+		margin-right: -1px;
+	}
+	
+	#userId_div_even {
+		width: 120px;
+	}
+	
+	#password_div_even {
+		width: 120px;
+	}
+	
+	form input[type=text] {font-size: 1.3em;}
+	form input[type=password] {font-size: 1.3em;}
+/*	form select {width: 8.5em;}  */
+	
+	/* END: fixes Firefox 2 issues */	
+	
+	#id_hl100_01_10001_btns{
+		margin-left: 13px;
+		margin-right: 9px;
+	}
+		
+	/* start fixes for 30_01 */
+	.detailsPageSectionHeader {
+		background: #F2F1EF none repeat scroll 0 0;
+	}
+	.detailsPageSectionHeader .detailsPageSectionHeaderTitle {
+		float:left;
+	}	
+	#Content .formcon .detailsPageSectionHeader .edit {
+		width: auto;
+		padding: 3px;
+		margin: 0 0;
+	}
+	#Content .formcon dt {
+		padding: 0.5em 0;
+	}
+	#Content .formcon dd {
+		padding: 0.5em 0;
+	}
+	/* end fixes for 30_01 */
+	
+	/* Login page fieldset fix  */
+	#id_gs10_01_loginSection_loginInstructions {
+		margin-bottom: 0px;
+		border-top: 0px;
+	}
+	
+	#id_gs10_02_loginSection_loginInstructions {
+		margin-bottom: 0px;
+		border-top: 0px;
+	}
+	
+	/* help icon fix */
+	.helpLinkIcon {
+		background: none;
+	}
+	
+	#contentHelp {
+		float:left;
+		margin-left:20px;
+		width:100%;
+	}
+	
+	#contentHelp .holder {
+		overflow:hidden;
+		padding:0 10px;
+	}
+	
+	.nextStepImage {
+		margin-top: -20px;
+	}
+	
+	form .formblock .chkbox label {
+		display:block;		
+		margin:-15px 0 0 35px;
+		[if lte IE 7] margin:-17px 0 0 35px;
+	}
+			
+	form td .formblock .chkbox label {
+		display:block;
+		margin:-18px 0 0 20px;
+		[if lte IE 7] margin:-17px 0 0 20px;
+	}
+	
+	form .formblock fieldset#id_gs10_06_yourDetails_passportChangeTypeRef .chkbox label {
+		display:block;
+		margin:-15px 0 0 20px;
+		[if lte IE 7] margin:-17px 0 0 20px;		
+	}
+	
+	form div#id_pd20_02_contactDets .formblock .chkbox label {
+		display:block;		
+		margin:-15px 0px 0px 20px;
+	}
+	
+	label[for="root_activeUser_application_applicant_application_deliveryAddressSpecified_true"] span a {
+		background: none;
+	}
+	
+	label[htmlFor="root_activeUser_application_applicant_application_deliveryAddressSpecified_true"] span a {
+		background: none;
+	}
+	
+	div#id_pd20_03_applicantAdditionalSet2_applicantAdditional2_dynamic1-olc {
+		margin-bottom: 0px; 
+		margin-top:0px;
+	}
+	
+	div#id_pd20_10_applicantAdditionalSet_applicantAdditional_dynamic1-olc {
+		margin-bottom: 0px; 
+		margin-top:0px;
+	}
+	
+	td div.formtext {
+		border : none;
+	}
+	
+	/* 30.03 table fix */
+	table tr td div.formcon div.formblock {
+		border-top: none;
+	}
+	
+	/*Date field fixes for hidding duplicate day*/
+	#id_gs10_05_passportDetailsPerspective_applicant_dob_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_05_parentMarriageDetails_dateOfParentsMarriage_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_05_mothersDetails_parent_dob_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_05_mothersDetails_dateOfPassportIssue_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_05_fathersDetails_parent_dob_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_05_fathersDetails_dateOfPassportIssue_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_maternalGrandparentMarriageDetails_dateOfGrandparentsMarriage_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_maternalGrandmotherDetails_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_maternalGrandfatherDetails_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_paternalGrandparentMarriageDetails_dateOfGrandparentsMarriage_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_paternalGrandmotherDetails_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_07_paternalGrandfatherDetails_dateOfBirth_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_04_certGranted_certificateOfRegistrationOrNaturalisation_certDate_alignedMonthYear div.odd {
+		visibility: hidden;
+		margin-left: -4em;
+	}
+	
+	#id_pd20_10_applicantAdditionalSet_applicantAdditional_ExtraInfo div.odd {
+		visibility: hidden;
+	}
+	
+	#id_pd20_03_applicantAdditionalSet2_applicantAdditional2_ExtraInfo div.odd {
+		visibility: hidden;
+	}
+	
+
+	/*for login page olc*/
+	#id_gs10_01_loginSection_loginInstructions a span.extimg {
+		display: none;		
+	}
+	
+	/*for login page cpp*/
+	#id_gs10_02_loginSection_loginInstructions a span.extimg {
+		display: none;		
+	}
+	/*for login page*/
+	div#id_gs10_07_loginSection {
+		width: 52%;
+	}
+	
+	/*for login page*/
+	
+	#root_activeUser_application_applicant_currentAddress_country {
+	  font-size: 1.2em;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_country div.labelContainer {
+	  float: left;
+	  width: 30%;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_country div.labelContainer div.labelContent {
+	  margin-right: 12px;
+	  text-align: right;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_country div.textOnlyInput {
+	  float: left;
+	  display: block;
+	  width: 65%;
+	  font-weight: bold;
+	}
+
+	#root_activeUser_application_applicant_currentAddress_country {
+	  font-size: 1.2em;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_country div.labelContainer {
+	  float: left;
+	  width: 30%;
+	}
+
+	#root_activeUser_application_applicant_currentAddress_country div.labelContainer div.labelContent {
+	  text-align: right;
+	}
+
+	#root_activeUser_application_applicant_currentAddress_country div.labelContainer div.labelContent span {
+	  margin-right: 12px;
+	}
+	
+	#root_activeUser_application_applicant_currentAddress_country div.textOnlyInput {
+	  float: left;
+	  display: block;
+	  width: 65%;
+	  font-weight: bold;
+	}
+	
+
+
+/*for login page*/
+	
+	form #id_gs10_03_gettingStarted_livingInCountry div.odd {
+	  float: none;
+	  width: auto;
+	  text-align: left;
+	}
+	form #id_gs10_03_gettingStarted div.odd label span {
+	  float: none;
+	  font-weight: bold;
+	  display: block;
+	  margin-bottom: 0.666em;
+	}
+
+	#id_se60_01_username p {
+	  margin-top: 0;
+	  font-size: 1.45em;
+	  font-weight: bold  !important;
+	  margin-bottom: 0;
+	}
+	
+	#id_se60_01_password p {
+	  margin-top: 0;
+	  font-size: 1.45em;
+	  font-weight: bold  !important;
+	  margin-bottom: 0;
+	}	
+
+
+	#id_co40_06_userLoginDetailsWrapper_userLoginDetails_username p {
+	  margin-top: 0;
+	  font-size: 1.45em;
+	  font-weight: bold !important;
+	  margin-bottom: 0;
+	}
+	
+	#id_co40_06_userLoginDetailsWrapper_userLoginDetails_password p {
+	  margin-top: 0;
+	  font-size: 1.45em;
+	  font-weight: bold  !important;
+	  margin-bottom: 0;
+	}
+
+	
+	#id_co40_06_downloadWrapper_groupedDownloadPanel .leftcol {
+	  margin-top: 0;
+	}
+	#id_co40_06_downloadWrapper_groupedDownloadPanel_downloadPanel_block4 {
+	  margin-top: 0;
+	}
+
+	
+	.complex_form .formcon table div.chkbox label {
+	  white-space: normal;
+	}
+	
+	#Content .complex_form .formcon table .formtext,
+	.complex_form .formcon table .formcon,
+	.complex_form .formcon table fieldset,
+	.complex_form .formcon table div.chkbox,
+	.complex_form .formcon table .formblock {
+	  border: 0px;
+	  padding: 0px;
+	  margin: 0px;
+	}
+	
+	.group .groupInput textarea{
+	margin-left: 0px;
+	margin-top: 0px;
+	}
+	
+	.textAreaPanel .input{
+	margin:0px;
+	}
+	
+	.group .textAreaPanel{
+	padding-left: 0px;
+	}
+	
+	.textArea {
+	margin-bottom: 0px;
+	}	
+	
+	.complex_form table tbody td.checkStatusCell {
+	width: 0%;
+	}
+	
+	#id_co40_06_downloadWrapper_groupedDownloadPanel_downloadPanel_block4 h3{
+	background:none;
+	}	
+	
+	
+	#id_gs10_07_loginSection_loginInstructions {
+	margin-bottom:0em;
+	}
+	
+	#id_gs10_03_gettingStarted div.odd {
+	font-size:1.3em;
+	}
+
+	#id_pd20_03_previousPassport_applicantAdditionalSet2_applicantAdditional2_ExtraInfo label span {
+	display: block;
+	float: none;
+	margin-bottom: 0.333em;
+	font-size:1.3em;
+	}
+	
+	#id_pd20_05_mothersDetails_parentNationalityPerspective{
+	margin-bottom:0px;
+	}
+	
+	#id_pd20_05_fathersDetails_parentNationalityPerspective{
+	margin-bottom:0px;
+	}	
+
+	#id_gs10_01_loginSection h3{
+	background:none;
+	}
+	#id_gs10_02_loginSection h3{
+	background:none;
+	}
+	#id_gs10_01_gs10_01_WelcomeImagePanel_message {
+	float:left;
+	}
+	
+	#id_gs10_01_gs10_01_PaymentPanel_message {
+	
+	clear:both;
+	}
+	
+	#id_gs10_01_gs10_01_PaymentPanel_help {
+	float:left;
+	width:100%;
+	clear:both;
+	}
+	
+	#id_gs10_02_gs10_02_PaymentPanel_message {
+	float:left;
+	clear:both;
+	}
+	
+	#id_gs10_02_gs10_02_PaymentPanel_help {
+	float:left;
+	width:100%;
+	clear:both;
+	}	
+	
+	#id_pd20_10_applicantAdditionalSet_applicantAdditional legend span {
+	padding:0 0 0 0;
+	}
+	
+	#id_pd20_10_applicantAdditionalSet_applicantAdditional_dynamic1-olc .formtext.first {
+	padding:0 0 0 0;
+	}
+	
+	#id_pd20_03_previousPassport_applicantAdditionalSet2_applicantAdditional2_dynamic2-olc {
+	margin-top:0em;
+	margin-bottom:0em; 
+	}
+	
+	#id_pd20_03_previousPassport_applicantAdditionalSet2_applicantAdditional2_dynamic2-olc .formtext.first {
+	padding:0 0 0 0;
+	}
+	
+	.label a.newHelpIcon {
+	height:15px;
+	}
+	
+	 a.newHelpIcon {
+	vertical-align:top;
+	}
+	
+	form .formblock .chkbox a {
+	font-size:1.1em;
+	height: auto;
+	line-height: normal;
+	}
+	.downloadDeclarationPdf{
+	float:left;
+	margin-right:15px;
+	padding:1px;
+	position:relative;
+	}
+	
+	#id_gs10_03_gettingStarted a.newHelpIcon {
+	height:15px;
+	}
+	
+	textarea {
+	resize: none;
+	}
+	
+	form .hide
+	{
+		display:none;
+	}
+	
+	form div#id_pd20_02_contactDets .formblock .chkbox input.checkbox {
+	margin-top:1px;
+	}
+	
+	/* Fixing checkboxes in more modern browsers (checkbox not fully visible). */
+	div.formcon div.formblock  div.chkbox {
+    overflow:visible;
+}	
+	/* START - LANGUAGE SWITCH WARNING */
+	#languageChangeWarning {
+		position: fixed;
+		background-color: #fff;
+		border: #888 1px solid;
+		z-index: 200;
+		top: -9999px;
+	}
+	
+	#languageChangeWarningShadow {
+		position: fixed;
+		z-index: 190;
+		background-color: #000;
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		top: -9999px;
+	}
+	
+	#languageChangeWarning #languageChangeContent {
+		padding-top: 15px;
+		margin: 0 5px 5px 5px;
+		border-top: 10px solid #2B8CC4;
+		border-bottom: #ccc 1px solid;
+	}
+	
+	#languageChangeWarning h2{
+		margin: 5px 0 5px 0;
+		font-size: 1.5em;
+	}
+	
+	#languageChangeWarning .buttons {
+		height: 4em;
+		margin: 10px 5px 10px 5px;
+		border-bottom: #ccc 1px solid;
+	}
+	
+	#languageChangeWarning .next {
+		float: right;
+		margin: 0;
+	}
+	
+	#languageChangeWarningCancelButton a {
+/*		padding:0.25em 0.25em 0.25em 12px;		*/
+		color: #000;
+	}
+	
+	#languageChangeWarning #TopBar .holder{
+		padding: 0;
+		margin: 0 5px 0 5px;
+	}
+	
+	#languageChangeOverlay {
+		background-color: #000;
+		position: absolute;
+		margin: auto;
+		top: -9999px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		filter: alpha(opacity=25);
+		opacity: 0.25;
+		z-index: 50;
+	}
+
+	/* IE-6 fixes */
+	* html #languageChangeWarning {
+		position: absolute;
+	}
+	
+	* html #languageChangeWarningShadow {
+		position: absolute;
+	}
+	/* END - LANGUAGE SWITCH WARNING */
+
+	
